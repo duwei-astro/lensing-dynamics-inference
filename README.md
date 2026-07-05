@@ -57,28 +57,16 @@ Download the repository and open
 ```text
 notebooks/run_mcmc_bpl_fiducial.ipynb
 ```
-
-The notebook retains the production settings used for the manuscript,
-including
-
-```python
-nwalkers = 2000
-nsteps = 600
-```
+The notebook implements the fiducial hierarchical inference used in the manuscript.
 
 For a quick test of the workflow, users may reduce `nwalkers`, `nsteps`, and
 the PSO parameter `n_particles`. The numbers of parallel processes specified
 in `Pool(80)` and by `n_processes` should be adjusted according to the
 available computational resources.
 
-The fiducial external-convergence-prior setting is
-
-```python
-lambda_val = 1.0
-```
-
-and users may change `lambda_val` to explore the sensitivity to the strength
-of these priors. To test the sensitivity of the results to the adopted cosmology, users can vary `Omatter` in `cosmo_kb_func.data_collection`, for example by setting `Omatter=0.35`.
+The fiducial external-convergence-prior setting is `lambda_val = 1.0` and users may 
+change `lambda_val` to explore the sensitivity of the inference to the weight assigned to the external-convergence priors. 
+To test the sensitivity of the results to the adopted cosmology, users can vary `Omatter` in `cosmo_kb_func.data_collection`, for example by setting `Omatter=0.35`.
 
 The figure-production notebooks are located in
 
