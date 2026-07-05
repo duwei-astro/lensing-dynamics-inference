@@ -48,7 +48,7 @@ The supporting data include:
 
 The hierarchical-inference chains used for the reported results and the
 lens-modelling MCMC chains for the lenses shown in Supplementary Fig. 1 are
-archived on Zenodo at [DOI].
+archived on Zenodo at https://doi.org/10.5281/zenodo.21188730.
 
 ## Running the example notebook
 
