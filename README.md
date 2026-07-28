@@ -76,19 +76,16 @@ Installation typically takes a few minutes.
 
 ## Running the example notebook
 
-Open
+Open:
 
 ```text
 notebooks/run_mcmc_bpl_fiducial.ipynb
 ```
+
 The notebook implements the fiducial hierarchical inference used in the manuscript.
 
-For a quick test of the workflow, users may reduce `nwalkers`, `nsteps`, and
-the PSO parameter `n_particles`. The numbers of parallel processes specified
-in `Pool(...)` and by `n_processes` should be adjusted according to the
-available computational resources.
-
-For a reduced demonstration with
+For a reduced demonstration, users may modify the relevant settings in
+`run_mcmc_bpl_fiducial.ipynb` as follows:
 
 ```text
 n_particles = 10
@@ -98,11 +95,13 @@ nsteps = 30
 Pool(20)
 ```
 
-Run all notebook cells in order. On the tested system, the reduced demonstration takes approximately 1 minute using 20 CPU cores. This configuration is intended only to demonstrate the workflow and does not provide converged posterior constraints. A successful run produces diagnostic output and an MCMC chain file, which is saved in the same directory as the notebook
+Run all notebook cells in order. On the tested system, the reduced demonstration takes approximately 1 minute using 20 CPU cores. This configuration is intended only to demonstrate the workflow and does not provide converged posterior constraints. 
+
+A successful run produces diagnostic output and an MCMC chain file, which is saved in the same directory as the notebook.
 
 The fiducial external-convergence-prior setting is `lambda_val = 1.0` and users may 
 change `lambda_val` to explore the sensitivity of the inference to the weight assigned to the external-convergence priors. 
-To test the sensitivity of the results to the adopted cosmology, users can vary `Omatter` in `cosmo_kb_func.data_collection`, for example by setting `Omatter=0.35`.
+To test the sensitivity of the results to the adopted cosmology, users can vary `Omatter` in `cosmo_kb_func.data_collection`, for example by setting `Omatter = 0.35`.
 
 ## Reproducing the figures
 
@@ -113,29 +112,24 @@ notebooks/figures/
 notebooks/supplementary_figures/
 ```
 
-They use the supporting data included in this repository and the production
-MCMC chains in the Zenodo archive linked above.
+They use the supporting data included in this repository and, where
+required, additional files from the Zenodo archive linked above.
 
-The notebooks currently read the chain files from `../../../NA_zenodo/`.
-Download the required files to this directory, or update the input paths
-in the notebooks to their local locations.
+The notebooks currently read the Zenodo files from directories under `../../../NA_zenodo/`.
+Users should download and extract the required files while preserving the expected directory structure, or update the input paths in the notebooks accordingly.
 
 Run all cells in the relevant notebook to reproduce the corresponding
 main-text or Supplementary figure. The generated figures are saved in the
 same directory as the notebook.
 
-## Applying the inference to another lens sample
+## Using the code with another lens sample
 
-The framework provides a scalable way to extract population-level
-information from strong-lens samples. To analyse another lens sample,
-replace the likelihood maps and lens metadata with files in the same
-formats as the provided examples. If their filenames or locations differ,
-update the corresponding input paths in the example notebook.
+To analyse another lens sample, replace the likelihood maps and lens metadata with files in the same
+formats as the provided examples. 
 
 ## License
 
-The source code in this repository is licensed under the BSD 3-Clause
-“New” or “Revised” License. See `LICENSE` for details.
+The source code in this repository is licensed under the BSD 3-Clause License. See LICENSE for details.
 
 <!--
 ## Citation
