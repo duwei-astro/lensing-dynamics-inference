@@ -95,11 +95,11 @@ nsteps = 30
 Pool(20)
 ```
 
-Run all notebook cells in order. On the tested system, the reduced demonstration takes approximately 1 minute using 20 CPU cores. This configuration is intended only to demonstrate the workflow and does not provide converged posterior constraints. 
+Run all notebook cells in order. On the tested system, the reduced demonstration takes approximately 1 minute using 20 parallel processes. This configuration is intended only to demonstrate the workflow and does not provide converged posterior constraints. 
 
 A successful run produces diagnostic output and an MCMC chain file, which is saved in the same directory as the notebook.
 
-The fiducial external-convergence-prior setting is `lambda_val = 1.0` and users may 
+The fiducial external-convergence-prior setting is `lambda_val = 1.0`. Users may 
 change `lambda_val` to explore the sensitivity of the inference to the weight assigned to the external-convergence priors. 
 To test the sensitivity of the results to the adopted cosmology, users can vary `Omatter` in `cosmo_kb_func.data_collection`, for example by setting `Omatter = 0.35`.
 
@@ -112,11 +112,8 @@ notebooks/figures/
 notebooks/supplementary_figures/
 ```
 
-They use the supporting data included in this repository and, where
-required, additional files from the Zenodo archive linked above.
-
-The notebooks currently read the Zenodo files from directories under `../../../NA_zenodo/`.
-Users should download and extract the required files while preserving the expected directory structure, or update the input paths in the notebooks accordingly.
+They use data included in this repository and, where
+required, additional files from the Zenodo archive linked above. Some notebooks currently read the Zenodo files from directories under `../../../NA_zenodo/`. Users should download and extract the required files while preserving the expected directory structure, or update the input paths in the notebooks accordingly.
 
 Run all cells in the relevant notebook to reproduce the corresponding
 main-text or Supplementary figure. The generated figures are saved in the
@@ -129,7 +126,7 @@ formats as the provided examples.
 
 ## License
 
-The source code in this repository is licensed under the BSD 3-Clause License. See LICENSE for details.
+The source code in this repository is licensed under the BSD 3-Clause License. See `LICENSE` for details.
 
 <!--
 ## Citation
