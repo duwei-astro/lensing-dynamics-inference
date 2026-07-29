@@ -72,11 +72,11 @@ cd lensing-dynamics-inference
 python -m pip install -r requirements.txt
 ```
 
-Installation typically takes a few minutes.
+Installation typically takes about 1 minute.
 
 ## Running the example notebook
 
-Open
+Open:
 
 ```text
 notebooks/run_mcmc_bpl_fiducial.ipynb
@@ -92,7 +92,7 @@ nsteps = 30
 Pool(20)
 ```
 
-Run all notebook cells in order. On the tested system, the reduced demonstration takes approximately 1 minute using 20 parallel processes. This configuration is intended only to demonstrate the workflow and does not provide converged posterior constraints. 
+Run all notebook cells in order. On the tested system, the reduced demonstration takes about 40 seconds using 20 parallel processes. This configuration is intended only to demonstrate the workflow and does not provide converged posterior constraints. 
 
 A successful run produces an MCMC chain file, which is saved in the same directory as the notebook.
 
@@ -109,7 +109,8 @@ notebooks/figures/
 notebooks/supplementary_figures/
 ```
 
-They use data included in this repository and, where required, additional files from the Zenodo archive linked above. Some notebooks currently read the Zenodo files from directories under `../../../NA_zenodo/`. Users should download and extract the required files while preserving the expected directory structure, or update the input paths in the notebooks accordingly.
+They use data included in this repository and, where required, additional files from the Zenodo archive linked above. Some notebooks currently read the Zenodo files from directories under `../../../NA_zenodo/`. Users should download and extract the required files, then either place them in the expected directories or update the corresponding input paths
+in the notebooks.
 
 Run all cells in the relevant notebook to reproduce the corresponding
 main-text or Supplementary figure. The generated figures are saved in the
